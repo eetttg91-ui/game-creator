@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Custom Eaglercraft</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#0f0c29, #302b63, #24243e);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            z-index: 10;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 3.5em;
+            text-shadow: 0 0 15px #00ffcc, 0 0 25px #ff00aa;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        button {
+            padding: 18px 40px;
+            margin: 12px;
+            font-size: 1.3em;
+            background: linear-gradient(#00ffcc, #00ccaa);
+            color: black;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00ffcc;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(#ff00aa, #cc0088);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff00aa;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 MY CUSTOM EAGLECRAFT 🌟</h1>
+        <p>Play Minecraft 1.8.8 directly in your browser — no downloads needed!</p>
+        
+        <button onclick="launchClient()">🚀 Launch Game (1.8.8)</button><br>
+        <button onclick="launchClient52()">🎮 Launch 1.5.2 Version</button>
+        
+        <div style="margin-top: 40px;">
+            <button onclick="addServer()">➕ Add Your Favorite Server</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        Made with ❤️ for fun • Works best in Chrome • Press F for fullscreen
+    </div>
+
+    <script>
+        function launchClient() {
+            // Popular public Eaglercraft 1.8.8 clients (you can change these)
+            const clients = [
+                "https://eaglercraft.com/play",
+                "https://g.eaglercraft.net/",
+                "https://eaglercraftx.com/"
+            ];
+            const randomClient = clients[Math.floor(Math.random() * clients.length)];
+            window.open(randomClient, '_blank');
+        }
+
+        function launchClient52() {
+            window.open("https://eaglercraft.net/", '_blank');
+        }
+
+        function addServer() {
+            alert("In the game:\n1. Go to Multiplayer\n2. Click 'Add Server'\n3. Paste your server address (ws:// or wss://)");
+        }
+
+        // Fullscreen hotkey
+        document.addEventListener('keydown', e => {
+            if (e.key.toLowerCase() === 'f') {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+        });
+
+        // Easter egg: click title for confetti
+        document.querySelector('h1').addEventListener('click', () => {
+            alert("🎉 Enjoy your custom client! 🎉");
+        });
+    </script>
+</body>
+</html>
